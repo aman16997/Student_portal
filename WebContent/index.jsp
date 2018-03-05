@@ -21,7 +21,7 @@
         </div>
      	<div class="input-field col s12">
           <input id="submit" type="submit" class="validate waves-effect waves-light btn" value="Let Me In">
-          <a class="waves-effect waves-light btn" href="signup.jsp">Sign Up   </a>
+          <a class="waves-effect waves-light btn" href="signup.jsp">Sign Up  </a>
         </div>
       </div>
       
