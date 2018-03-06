@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-   <%@include file="header.html" %> 
+  <%--  <%@include file="header.html" %>  --%>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Sign Up</title>
@@ -45,7 +45,14 @@
 			    </select>
 			    <label>Branch</label>
  		  </div>		
- 		  
+ 		  <div class="input-field col s6">
+ 		  	<select name="role" class="browser-default">
+ 		  		<option value="" disabled selected>Choose Your Role</option>
+ 		  		<option value="s">Student</option>
+ 		  		<option value="t">Teacher</option>
+ 		  	</select>
+ 		  		<label>Login As:</label>
+ 		  </div>
  		   <div class="input-field col s12">
 	         <input id="contact" type="text" class="validate" name="contact">
 	         <label for="contact" data-error="wrong" data-success="right">Contact Number</label>

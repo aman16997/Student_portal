@@ -29,4 +29,14 @@
     <servlet-name>login</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>student1</display-name>
+    <servlet-name>student1</servlet-name>
+    <servlet-class>servlet.student1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>student1</servlet-name>
+    <url-pattern>/student1</url-pattern>
+  </servlet-mapping>
 </web-app>
