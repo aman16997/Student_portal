@@ -28,26 +28,7 @@
       
     </form>
   </div> 
-        
-      
-      <!-- 
-      <form method="post" action="login">
-  <div class="form-group"> left unspecified, .bmd-form-group will be automatically added (inspect the code)
-    <label for="formGroupExampleInput" class="bmd-label-floating">Roll Number</label>
-    <input type="text" class="form-control" >
-  </div>
-  <div class="form-group bmd-form-group"> manually specified 
-    <label for="formGroupExampleInput2" class="bmd-label-floating">Another label</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2">
-  </div>
-  <button type="submit" class="btn btn-primary btn-raised">Submit</button>
-</form>
-       -->
-      
-      
-      
-      
-      
+           
       
      <%@include file="footer.html" %> 
       
