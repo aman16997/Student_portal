@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import bean.User;
 import bean.credentials;
 import bean.resume;
+import dao.CredentialsIm;
 import dao.ResumeIm;
 import dao.UserIm;
 
@@ -41,6 +42,7 @@ public class SignUp extends HttpServlet {
 		String password = request.getParameter("password");
 		String branch = request.getParameter("branch");
 		int contact = Integer.parseInt(request.getParameter("contact"));
+		String role = request.getParameter("role");
 		
 		//Calling Bean
 		User uBean = new User();
@@ -52,7 +54,7 @@ public class SignUp extends HttpServlet {
 		uBean.setLast_name(last_name);
 		uBean.setEmail(email);
 		uBean.setRollno(roll);
-		uBean.setPassword(password);
+		//uBean.setPassword(password);
 		uBean.setBranch(branch);
 		uBean.setContact(contact);
 		
@@ -63,18 +65,30 @@ public class SignUp extends HttpServlet {
 		rs.setBranch(branch);
 		rs.setContact(contact);
 		
+		//Setting the values on Credentials Bean
+		cre.setRoll(roll);
+		cre.setPassword(password);
+		cre.setRole(role);
+		
+		//Get the result from credentials
+		CredentialsIm cred = new CredentialsIm();
+		String id = cred.createCredentials(cre);
+		System.out.println(id);
 		
 		//Get the result from user 
 		UserIm im = new UserIm();
-		String id = im.createUser(uBean);
+		String id1 = im.createUser(uBean);
+		
 		
 		//Get the result from Resume 
 		ResumeIm rsim = new ResumeIm();
 		String id2 = rsim.createResume(rs); 
 		System.out.println(id2);
 		
+		
 		//Output
-		request.setAttribute("Result", id);
+		request.setAttribute("Credentials", id);
+		request.setAttribute("Result", id1);
 		request.getRequestDispatcher("home.jsp").forward(request, response);
 		
 	}

@@ -35,6 +35,9 @@ public class student1 extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 	
+		//Get the roll no from 
+		int roll = Integer.parseInt(request.getParameter("roll"));
+		
 		//Get the input from Signup 
 		String first_name = request.getParameter("first_name");
 		String last_name = request.getParameter("last_name");
@@ -67,15 +70,22 @@ public class student1 extends HttpServlet {
 		rs.setSkill(skill);
 		rs.setOther(other);
 		
+		//Setting the value of Bean of User
+		ubean.setFirst_name(first_name);
+		ubean.setLast_name(last_name);
+		ubean.setRollno(roll);
+		ubean.setEmail(email);
+		ubean.setBranch(branch);
+		ubean.setContact(contact);
 		
 		//Create an object of Dao Class
 		ResumeIm im = new ResumeIm();
 		UserIm u = new UserIm();
 		
 		//Calling the function in Resume Dao
-		im.createResume(rs);
+		String id = im.createResume(rs);
 		//Calling the function in User Dao
-		u.updateUser(ubean);
+		boolean id1 = u.updateUser(ubean);
 		
 		
 		

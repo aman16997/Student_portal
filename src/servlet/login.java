@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import bean.User;
+import bean.credentials;
 import utitlies.Authentication;
 import utitlies.AuthenticationIm;
 
@@ -40,13 +41,13 @@ public class login extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		//Setting the values in bean
-		User ubean = new User();
-		ubean.setRollno(roll);
-		ubean.setPassword(password);
+		credentials cre = new credentials();
+		cre.setRoll(roll);
+		cre.setPassword(password);
 		
 		//Calling the method
 		AuthenticationIm auth = new AuthenticationIm();
-		boolean result = auth.authenticate(ubean);
+		boolean result = auth.authenticate(cre);
 		
 		if(result != true)
 		{

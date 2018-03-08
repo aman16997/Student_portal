@@ -17,14 +17,14 @@ public class UserIm implements UserDao {
 	@Override
 	public String createUser(User u) {
 		try {
-			PreparedStatement ps = con.prepareStatement("INSERT INTO USER VALUES(?,?,?,?,?,?,?)");
+			PreparedStatement ps = con.prepareStatement("INSERT INTO USER VALUES(?,?,?,?,?,?)");
 			ps.setString(1, u.getFirst_name());
 			ps.setString(2, u.getLast_name());
 			ps.setString(3, u.getEmail());
 			ps.setInt(4, u.getRollno());
-			ps.setString(5, u.getPassword());
-			ps.setString(6, u.getBranch());
-			ps.setInt(7, u.getContact());
+//			ps.setString(5, u.getPassword());
+			ps.setString(5, u.getBranch());
+			ps.setInt(6, u.getContact());
 			int a = ps.executeUpdate();
 			if(a != 0)
 			{

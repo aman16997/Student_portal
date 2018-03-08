@@ -6,7 +6,7 @@ public class User {
 	public String last_name;
 	public int rollno;
 	public String email;
-	public String password;
+//	public String password;
 	public String branch;
 	public int contact;
 	public String getFirst_name() {
@@ -33,12 +33,12 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
+//	public String getPassword() {
+//		return password;
+//	}
+//	public void setPassword(String password) {
+//		this.password = password;
+//	}
 	public String getBranch() {
 		return branch;
 	}
